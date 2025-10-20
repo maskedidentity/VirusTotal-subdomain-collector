@@ -3,7 +3,10 @@ python script to get subdomains enlisted on VirusTotal for a particular domain o
 
 Usage
 
+for a single domain
 -> python3 vt_subdomains.py -d google.com
+
+for a list of domains
 -> python3 vt_subdomains.py -l list_of_domains.txt
 
 installation
