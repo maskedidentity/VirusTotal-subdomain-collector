@@ -14,3 +14,5 @@ installation
 1) git clone https://github.com/maskedidentity/VirusTotal-subdomain-collector
 2) cd VirusTotal-subdomain-collector
 3) pip install -r requirements.txt
+
+Dont forget to add your virustotal api keys into the code
