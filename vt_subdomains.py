@@ -6,7 +6,7 @@ VT_KEYS = ["enter key 1" ,"enter key 2", "enter key 3"]
 VT_KEYS = [k for k in VT_KEYS if k]
 
 if not VT_KEYS:
-    print("❌ Please set at least one VirusTotal API key (VT_KEY1 / VT_KEY2 / VT_KEY3).")
+    print("Please set at least one VirusTotal API key (VT_KEY1 / VT_KEY2 / VT_KEY3).")
     sys.exit(1)
 
 VT_URL = "https://www.virustotal.com/vtapi/v2/domain/report"
@@ -24,7 +24,7 @@ while i < len(args):
         file_input = args[i + 1]
         i += 2
     else:
-        print(f"❌ Unknown flag or missing value: {args[i]}")
+        print(f"Unknown flag or missing value: {args[i]}")
         sys.exit(1)
 
 if not domain_input and not file_input:
@@ -44,7 +44,7 @@ def get_subdomains(domain):
         data = resp.json()
         return data.get("subdomains", [])
     except Exception as e:
-        print(f"⚠️ Error fetching {domain}: {e}")
+        print(f"Error fetching {domain}: {e}")
         return []
 
 
@@ -84,9 +84,9 @@ if file_input:
                 line = line.strip()
                 if line and not line.startswith("#"):
                     initial_domains.append(line)
-        print(f"📄 Loaded {len(initial_domains) - (1 if domain_input else 0)} subdomains from {file_input}")
+        print(f"Loaded {len(initial_domains) - (1 if domain_input else 0)} subdomains from {file_input}")
     except Exception as e:
-        print(f"⚠️ Could not read file {file_input}: {e}")
+        print(f"Could not read file {file_input}: {e}")
         sys.exit(1)
 
 initial_domains = list(set(initial_domains))
